@@ -1,0 +1,13 @@
+<%= form_for @order do |o| %>
+  <% Food.all.each do |food| %>
+    <%= o.fields_for :items do |f| %>
+      <%= food.name %>
+      <%= f.text_field :food_id, value: food.id %>
+      <%= fa_icon 'minus' %>
+      <%= f.number_field :amount %>
+      <%= fa_icon 'plus' %>
+    <% end %>
+    <br>
+  <% end %>
+  <%= o.submit %>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>Orders#<%= order.id %><%= order.total_price %></h1>
+<table>
+  <thead>
+    <th>品項</th>
+    <th>數量</th>
+    <th>價格</th>
+  </thead>
+  <%= render partial: 'orders/item', collection: order.items %>
+</table>
